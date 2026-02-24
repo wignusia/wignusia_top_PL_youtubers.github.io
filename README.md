@@ -230,6 +230,8 @@ WHERE
 ```
 
 ##Output
+![screenshots_SQL_data_quality_checks.png](asset/images/screenshots_SQL_data_quality_checks.png)
 
 
 #Visualization
+##Results
