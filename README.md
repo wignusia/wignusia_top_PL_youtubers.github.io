@@ -177,7 +177,7 @@ FROM
 | **Uniqueness** | Each record must be unique (no duplicates). | ✅ Passed |
 | **Null Check** | No record should contain NULL values. | ✅ Passed |
 
-##SQL query
+## SQL Query	
 
 ```sql
 --- 1.Row count check
@@ -229,9 +229,9 @@ WHERE
 	 OR total_videos IS NULL;
 ```
 
-##Output
+## Output
 ![screenshots_SQL_data_quality_checks.png](asset/images/screenshots_SQL_data_quality_checks.png)
 
 
-#Visualization
-##Results
+# Visualization
+## Results
