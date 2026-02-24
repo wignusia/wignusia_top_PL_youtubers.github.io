@@ -44,6 +44,47 @@ The data is sourced from **Kaggle** (via an Excel extract). You can find the ori
 
 > **Note:** This project uses the 2024 Kaggle dataset as the baseline list of YouTube channels. Performance metrics—such as subscribers, views, and video counts—are dynamically updated using real-time **2026 data** fetched via the **YouTube API**.
 
+## Stages
 
+* **Design**
+* **Development**
+* **Testing**
+* **Analysis**
 
+---
+
+## Dashboard Components Required
+
+### What should the dashboard contain?
+To determine the layout and functionality, the dashboard must answer the following key business questions:
+
+- [ ] Who are the **top 10 YouTubers** with the most subscribers?
+- [ ] Which **3 channels** have uploaded the most videos?
+- [ ] Which **3 channels** have the most views?
+- [ ] Which **3 channels** have the highest **average views** per video?
+- [ ] Which **3 channels** have the highest **views per subscriber** ratio?
+- [ ] Which **3 channels** have the highest **subscriber engagement rate** per video uploaded?
+
+## Dashboard Mockup
+
+### What should it look like?
+To effectively answer our key questions, the dashboard will incorporate several data visualizations. The following components have been identified as appropriate for this project:
+
+* **Table** – For detailed breakdowns of YouTuber metrics.
+* **Treemap** – To visualize the distribution of subscribers or views across different categories.
+* **Scorecards** – For high-level "at a glance" KPIs (e.g., total subscribers, total views).
+* **Horizontal Bar Chart** – Ideal for ranking the top 10 channels and comparing performance.
+
+[dashboard_mockup.png](asset/images/dashboard_mockup.png)
+
+## Tools
+
+| Tool | Purpose |
+| :--- | :--- |
+| **Excel** | Initial data exploration and quick profiling. |
+| **Python** | Fetching real-time data from the YouTube API. |
+| **SQL Server** | Cleaning, testing, and performing in-depth data analysis. |
+| **Power BI** | Visualizing the data through interactive dashboards. |
+| **GitHub** | Project documentation hosting and version control. |
+| **Canva** | Designing the high-fidelity mockup of the dashboard. |
 
