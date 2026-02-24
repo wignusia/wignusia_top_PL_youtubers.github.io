@@ -160,12 +160,81 @@ Data Cleaning Steps:
 
 CREATE VIEW view_top_youtube_poland_2024 AS
 SELECT 
-    -- Extracting name before the '@' symbol and casting it
     CAST(SUBSTRING(NAME, 1, CHARINDEX('@', NAME) - 1) AS VARCHAR(100)) AS channel_name,
-    
-    -- Replacing NULLs with 0 to prevent errors in dashboard calculations
     COALESCE(total_subscribers, 0) AS total_subscribers,
     COALESCE(total_views, 0) AS total_views,
     COALESCE(total_videos, 0) AS total_videos
 FROM 
     top_youtube_poland_2024;
+
+#Testing
+
+| Check | Description | Status |
+| :--- | :--- | :--- |
+| **Row Count** | The dataset must contain exactly 100 records. | ✅ Passed |
+| **Column Count** | The dataset must include exactly 4 fields. | ✅ Passed |
+| **Data Types** | `channel_name` must be a string; other metrics must be numeric. | ✅ Passed |
+| **Uniqueness** | Each record must be unique (no duplicates). | ✅ Passed |
+| **Null Check** | No record should contain NULL values. | ✅ Passed |
+
+##SQL query
+'''sql
+--- 1.Row count check
+SELECT 
+	Count(*) no_of_rows
+FROM 
+	view_top_youtube_poland_2024
+
+
+--- 2. Column count check 
+SELECT 
+	COUNT (*) as  column_count
+FROM 
+	INFORMATION_SCHEMA.COLUMNS
+WHERE 
+	TABLE_NAME = 'view_top_youtube_poland_2024'
+
+
+--- 3. Data type check
+
+SELECT 
+	  COLUMN_NAME,
+	  DATA_TYPE
+FROM 
+	INFORMATION_SCHEMA.COLUMNS
+WHERE	
+	TABLE_NAME = 'view_top_youtube_poland_2024'
+
+
+--- 4. Duplicate check
+
+SELECT 
+	channel_name,
+	COUNT(*)as duplica_check
+FROM 
+	view_top_youtube_poland_2024
+GROUP BY 
+	channel_name
+HAVING 
+	COUNT(*) >1
+
+
+--- 5. null check
+
+SELECT 
+	COUNT(*) AS null_count,
+	CASE 
+        WHEN COUNT(*) = 0 THEN 'PASSED' 
+        ELSE 'FAILED' 
+    END AS test_status
+FROM 
+	view_top_youtube_poland_2024
+WHERE	
+	 total_subscribers IS NULL
+	 OR total_views IS NULL
+	 OR total_videos IS NULL;
+
+##Output
+
+
+#Visualization
