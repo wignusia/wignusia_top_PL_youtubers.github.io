@@ -51,8 +51,6 @@ The data is sourced from **Kaggle** (via an Excel extract). You can find the ori
 * **Testing**
 * **Analysis**
 
----
-
 ## Dashboard Components Required
 
 ### What should the dashboard contain?
@@ -87,4 +85,21 @@ To effectively answer our key questions, the dashboard will incorporate several 
 | **Power BI** | Visualizing the data through interactive dashboards. |
 | **GitHub** | Project documentation hosting and version control. |
 | **Canva** | Designing the high-fidelity mockup of the dashboard. |
+
+
+## Development
+
+### Pseudocode
+
+**What is the general approach in creating this solution from start to finish?**
+
+1. **Get the Data** – Identify and collect the baseline dataset.
+2. **Data Acquisition & Exploration** – Explore the data in **Excel** and fetch real-time metrics via the **YouTube API**.
+3. **Data Ingestion** – Load the raw data into **SQL Server**.
+4. **Data Cleaning** – Refine and format the data using **SQL** to ensure accuracy.
+5. **Data Testing** – Run quality checks and validation scripts in **SQL**.
+6. **Data Visualization** – Build interactive dashboards in **Power BI**.
+7. **Insight Generation** – Analyze the visuals to generate findings and key takeaways.
+8. **Documentation** – Write the technical documentation and project commentary.
+9. **Deployment** – Publish the final project and documentation to **GitHub Pages**.
 
