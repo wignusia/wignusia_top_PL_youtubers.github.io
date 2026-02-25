@@ -249,27 +249,20 @@ WHERE
 
 # Data Type Issue: Unicode Support
 
-### Problem Description
-During validation of the `channel_name` column, several records containing **Cyrillic characters** were identified as incorrectly encoded:
+### 2. Issue: Unicode Support (Cyrillic Characters)
 
-* Софунья Шалунья
-* Готовим дома
+**Problem:**
+Incorrect encoding of Cyrillic characters (e.g., `Софунья Шалунья`, `Готовим дома`) due to `VARCHAR` data type.
 
-**Issue:** Cyrillic characters were not handled correctly because the column used the `VARCHAR` data type, which lacks native support for various non-Latin character sets.
+**Root Cause:**
+The `channel_name` column used `VARCHAR`, which lacks full Unicode compatibility.
 
----
-
-### Root Cause
-The `channel_name` column was defined as **VARCHAR**. This data type is typically limited to a specific code page and does not provide full Unicode compatibility.
-
-### Business Decision
-It was confirmed that the dataset must support internationalization and non-Latin characters to maintain data integrity across different regions.
-
-### Solution Implemented
+**Solution:**
 <span style="color: #4B0082;">**Changed data type from VARCHAR to NVARCHAR to enable full Unicode support.**</span>
 
-### Result
-Multilingual channel names are now stored, processed, and displayed correctly without data loss or corruption.
+**Result:**
+Multilingual channel names are now stored and displayed correctly.
+
 
 
 # Visualization
