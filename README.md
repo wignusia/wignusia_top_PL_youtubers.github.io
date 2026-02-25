@@ -263,7 +263,7 @@ The `channel_name` column used `VARCHAR`, which lacks full Unicode compatibility
 **Result:**
 Multilingual channel names are now stored and displayed correctly.
 
-
+![cyrillic_rendering_issue_(varchar_to_nvarchar).png](asset/images/cyrillic_rendering_issue_(varchar_to_nvarchar).png)
 
 # Visualization
 ## Results
