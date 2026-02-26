@@ -283,7 +283,87 @@ Multilingual channel names are now stored and displayed correctly.
 
 ![cyrillic_rendering_issue_(varchar_to_nvarchar).png](asset/images/cyrillic_rendering_issue_(varchar_to_nvarchar).png)
 
+---
+
 # Visualization
 ## Results
 What does the dashboard look like?
 ![powerbi_dashboard_PL.gif](asset/images/powerbi_dashboard_PL.gif)
+
+## DAX Measures
+
+### 1. Total Subscribers (M)
+Calculates the total number of subscribers across all channels, scaled to millions.
+```dax
+Total Subscribers (M) = 
+VAR million = 1000000
+VAR sumOfSubscribers = SUM(view_top_youtube_poland_2024[total_subscribers])
+VAR totalSubscribers = DIVIDE(sumOfSubscribers, million)
+
+RETURN totalSubscribers
+```
+### 2. Total Views (B)
+Calculates the total number of views across all channels, scaled to billions and rounded to two decimal places.
+```dax
+Total Views (B) = 
+VAR billion = 1000000000
+VAR sumOfTotalViews = SUM(view_top_youtube_poland_2024[total_views])
+VAR totalViews = ROUND(sumOfTotalViews / billion, 2)
+
+RETURN totalViews
+```
+### 3. Total Videos
+Calculates the total number of videos uploaded by the YouTubers in the dataset.
+
+```dax
+Total Videos = 
+VAR totalVideos = SUM(view_top_youtube_poland_2024[total_videos])
+
+RETURN totalVideos
+```
+
+####  4. Average Views Per Video (M)
+Calculates the average number of views per video, expressed in millions.
+
+```dax
+Average Views per Video (M) = 
+VAR sumOfTotalViews = SUM(view_top_youtube_poland_2024[total_views])
+VAR sumOfTotalVideos = SUM(view_top_youtube_poland_2024[total_videos])
+VAR avgViewsPerVideo = DIVIDE(sumOfTotalViews, sumOfTotalVideos, BLANK())
+VAR finalAvgViewsPerVideo = DIVIDE(avgViewsPerVideo, 1000000, BLANK())
+
+RETURN finalAvgViewsPerVideo
+```
+
+###  5. Subscriber Engagement Rate
+Measures the relationship between the number of subscribers and the total number of videos produced.
+
+```dax
+Subscriber Engagement Rate = 
+VAR sumOfTotalSubscribers = SUM(view_top_youtube_poland_2024[total_subscribers])
+VAR sumOfTotalVideos = SUM(view_top_youtube_poland_2024[total_videos])
+VAR subscriberEngRate = DIVIDE(sumOfTotalSubscribers, sumOfTotalVideos, BLANK())
+
+RETURN subscriberEngRate
+```
+
+### 6. Views per Subscriber
+Calculates the average number of views generated per individual subscriber.
+
+```dax
+Views Per Subscriber = 
+VAR sumOfTotalViews = SUM(view_top_youtube_poland_2024[total_views])
+VAR sumOfTotalSubscribers = SUM(view_top_youtube_poland_2024[total_subscribers])
+VAR viewsPerSubscriber = DIVIDE(sumOfTotalViews, sumOfTotalSubscribers, BLANK())
+
+RETURN viewsPerSubscriber
+```
+
+
+
+
+
+
+
+
+
