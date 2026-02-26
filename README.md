@@ -286,4 +286,4 @@ Multilingual channel names are now stored and displayed correctly.
 # Visualization
 ## Results
 What does the dashboard look like?
-![powerbi_dashboard_PL.mp4](asset/images/powerbi_dashboard_PL.mp4)
+<video src="asset/images/powerbi_dashboard_PL.mp4" width="100%" controls autoplay loop muted></video>
