@@ -367,12 +367,17 @@ For this analysis, we're going to focus on the questions below to get the inform
 
 Here are the key questions we need to answer for our marketing client:
 
-1.Who are the top 10 YouTubers with the most subscribers?
-2.Which 3 channels have uploaded the most videos?
-3.Which 3 channels have the most views?
-4.Which 3 channels have the highest average views per video?
-5.Which 3 channels have the highest views per subscriber ratio?
-6.Which 3 channels have the highest subscriber engagement rate per video uploaded?
+**1.** Who are the top **10** YouTubers with the most subscribers?  
+
+**2.** Which **3** channels have uploaded the most videos?  
+
+**3.** Which **3** channels have the most views?  
+
+**4.** Which **3** channels have the highest average views per video?  
+
+**5.** Which **3** channels have the highest views per subscriber ratio?  
+
+**6.** Which **3** channels have the highest subscriber engagement rate per video uploaded?  
 
 
  ### 1. Who are the top 10 YouTubers with the most subscribers?
@@ -397,3 +402,14 @@ Here are the key questions we need to answer for our marketing client:
 | 1    | tvnpl        | 20163           |
 | 2    | TVN Series   | 13589           |
 | 3    | Polsat       | 12077           |
+
+### Which 3 channels have the most views?
+
+| Rank | Channel Name                                   | Total Views (B) |
+|:----:|:-----------------------------------------------|----------------:|
+| 1    | SBM Label                                      | 5,211,233,217   |
+| 2    | Step Records                                   | 5,004,587,187   |
+| 3    | Śpiewające Brzdące - Piosenki dla dzieci       | 4,673,061,131   |
+
+### 4. Which 3 channels have the highest average views per video? 
+
