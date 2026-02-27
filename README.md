@@ -399,13 +399,29 @@ Here are the key questions we need to answer for our marketing client:
 
 ### Which 3 channels have the most views?
 
-| Rank | Channel Name                                   | Total Views (B) |
+| Rank | Channel Name                                   | Total Views (B)?????? |
 |:----:|:-----------------------------------------------|----------------:|
 | 1    | SBM Label                                      | 5,211,233,217   |
 | 2    | Step Records                                   | 5,004,587,187   |
 | 3    | Śpiewające Brzdące - Piosenki dla dzieci       | 4,673,061,131   |
 
 ### 4. Which 3 channels have the highest average views per video? 
+
+| Rank | Channel Name                                   | Average Views per Video |
+|:----:|:-----------------------------------------------|------------------------:|
+| 1    | JuzzyGamePlay                                  | 37,250,000              |
+| 2    | Sobel                                          | 17,840,000              |
+| 3    | MINIVEVO                                       | 13,370,000              |
+
+###5. Which 3 channels have the highest views per subscriber ratio?
+
+| Rank | Channel Name                                   | Views per Subscriber |
+|:-----|:-----------------------------------------------|---------------------:|
+| 1    | Śpiewające Brzdące - Piosenki dla dzieci       | 1,825                |
+| 2    | MINIVEVO                                       | 1,785                |
+| 3    | tvnpl                                          | 1,607                |
+
+### 6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
 
 
 🏗️ Under Construction:
