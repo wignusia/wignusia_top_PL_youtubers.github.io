@@ -7,8 +7,9 @@
 
 ### What is the key pain point?
 
-The Head of Marketing wants to identify the top YouTubers in Poland in 2024 to determine which creators would be the most suitable for marketing campaigns throughout the rest of the year.
-The dashboard integrates real-time 2026 data via the YouTube API to ensure up-to-date performance metrics.
+The Head of Marketing wants to identify the most commercially attractive Polish YouTube channels to partner with for upcoming marketing campaigns.
+
+The initial ranking is based on a 2024 Kaggle dataset (Top 100 Polish YouTubers). However, performance metrics such as subscriber count, total views, and video count are dynamically updated using real-time 2026 data from the YouTube API to reflect current channel performance.
 
 ### What is the ideal solution?
 
@@ -399,11 +400,11 @@ Here are the key questions we need to answer for our marketing client:
 
 ### Which 3 channels have the most views?
 
-| Rank | Channel Name                                   | Total Views (B)?????? |
-|:----:|:-----------------------------------------------|----------------:|
-| 1    | SBM Label                                      | 5,211,233,217   |
-| 2    | Step Records                                   | 5,004,587,187   |
-| 3    | Śpiewające Brzdące - Piosenki dla dzieci       | 4,673,061,131   |
+| Rank | Channel Name                                  | Total Views (B) |
+|:----:|:----------------------------------------------|-------:|
+| 1    | SBM Label                                     | 5.21  |
+| 2    | Step Records                                  | 5.00  |
+| 3    | Śpiewające Brzdące - Piosenki dla dzieci      | 4.67  |
 
 ### 4. Which 3 channels have the highest average views per video? 
 
@@ -465,7 +466,7 @@ For this analysis, we will prioritize metrics that are critical for generating t
 * **Average views per video:** 0.875M
 * **Potential units sold:** 870,150, * 2% = **17,400 units**
 * **Potential revenue:** 17,400 * 8.5 PLN = **147,900 PLN**
-* **Net profit:** 147,90 - 40,000 = **107,900 PLN**
+* **Net profit:** 147,900 - 40,000 = **107,900 PLN**
 
 ### ⚠️ Recommendations
 Based on the subscriber-led analysis, **Bazylland - Tractors & Excavators** is the most profitable option, offering a potential net profit of **544,800 PLN** per video.
@@ -756,6 +757,15 @@ Based on our analysis, we believe the best channel to advance a long-term partne
 **Thank you** for taking the time to view and read this project! I hope the insights gathered are valuable.
 
 **Have a great day! / Miłego dnia!** 😊
+
+### 💡 Project Limitations & Real-Life Considerations
+I am aware that this is a simplified analysis. In a real-world marketing scenario, a more robust ROI model would be required, taking into account factors such as:
+
+* **Audience Mismatch:** Not all subscribers of a channel (e.g., kids' channels) are the target buyers for every product.
+* **Seasonality:** Views and conversion rates can fluctuate significantly depending on the time of year (e.g., Q4 holidays).
+* **Algorithm Volatility:** YouTube's recommendation engine can change, affecting the reach of new videos unpredictably.
+* **Sponsorship Fatigue:** Frequent promotions on a single channel can lead to lower engagement over time.
+* **Retention:** Initial views don't always translate to long-term brand loyalty or repeat customers.
 
 ---
 **Inspiration:** This project was inspired by the [sdw-online/top_uk_youtubers_2024] (https://github.com/sdw-online/top_uk_youtubers_2024/tree/main)study.
