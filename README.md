@@ -554,7 +554,6 @@ ORDER BY
 * **Potential revenue:** 1,800 * 8.5 PLN = **15,300 PLN**
 * **Net profit:** 15,300 - 45,000 = **-29,700 PLN (Loss)**
 
----
 
 ### ⚠️ Recommendations
 All channels in this category show a **negative ROI**. However, **TVN** and **Polsat** remain the most consistent uploaders. For these creators, a cross-media campaign (TV + YouTube) is recommended to build long-term reach rather than immediate sales profit. 
@@ -602,13 +601,109 @@ WHERE
 -- 5.
 ORDER BY
     net_profit DESC;
-```
 ### Output
 ![youtubers_with_the_most_videos.png](asset/images/youtubers_with_the_most_videos.png)
 
 
-🏗️ Under Construction:
+## 3. Youtubers with the most views
+### Calculation breakdown
 
+**Campaign Overview:**
+* **Campaign Idea:** Influencer marketing
+* **Conversion Rate:** 2% (0.02)
+* **Product Cost:** 8.50 PLN
+* **Campaign Cost:** 80,000.00 PLN
+
+### a. Śpiewające Brzdące - Piosenki dla dzieci
+* **Average views per video:** 5,460,000
+* **Potential units sold:** 5,460,000 * 2% = **109,200 units**
+* **Potential revenue:** 109,200 * 8.5 PLN = **928,200 PLN**
+* **Net profit:** 928,200 - 80,000 = **848,200 PLN**
+
+### b. Bazylland - Tractors & Excavators
+* **Average views per video:** 3,440,000
+* **Potential units sold:** 3,440,000 * 2% = **68,800 units**
+* **Potential revenue:** 68,800 * 8.5 PLN = **584,800 PLN**
+* **Net profit:** 584,800 - 80,000 = **504,800 PLN**
+
+### c. SBM Label
+* **Average views per video:** 3,070,000
+* **Potential units sold:** 3,070,000 * 2% = **61,400 units**
+* **Potential revenue:** 61,400 * 8.5 PLN = **521,900 PLN**
+* **Net profit:** 521,900 - 80,000 = **441,900 PLN**
+
+### d. Step Records
+* **Average views per video:** 1,690,000
+* **Potential units sold:** 1,690,000 * 2% = **33,800 units**
+* **Potential revenue:** 33,800 * 8.5 PLN = **287,300 PLN**
+* **Net profit:** 287,300 - 80,000 = **207,300 PLN**
+
+### e. tvnpl
+* **Average views per video:** 210,000
+* **Potential units sold:** 210,000 * 2% = **4,200 units**
+* **Potential revenue:** 4,200 * 8.5 PLN = **35,700 PLN**
+* **Net profit:** 35,700 - 80,000 = **-44,300 PLN (Loss)**
+
+### 💡 Recommendations
+
+"Śpiewające Brzdące" has top ROI but wrong target audience (kids). "Bazylland" is the best strategic fit with positive ROI. Recommend a package deal for the top 3 channels to maximize collective returns and establish a long-term partnership.
+
+For Tvn Recommend a cross-media campaign (TV + YouTube) to build long-term reach.
+
+```SQL
+/* 
+
+# 1. Define variables 
+# 2. Create a CTE that rounds the average views per video 
+# 3. Select the column you need and create calculated columns from existing ones 
+# 4. Filter results by Youtube channels
+# 5. Sort results by net profits (from highest to lowest)
+
+*/
+
+-- 1. 
+DECLARE @conversionRate FLOAT = 0.02;		-- The conversion rate @ 2%
+DECLARE @productCost FLOAT = 8.5;			-- The product cost @ PLN 8.5
+DECLARE @campaignCost FLOAT = 80000.0;		-- The campaign cost @  PLN 40,000	
+
+
+-- 2.  
+WITH ChannelData AS (
+    SELECT 
+        channel_name,
+        total_views,
+        total_videos,
+        ROUND(CAST(total_views AS FLOAT) / NULLIF(total_videos,0), -4) AS rounded_avg_views_per_video
+    FROM 
+        view_top_youtube_poland_2024
+)
+
+-- 3. 
+SELECT 
+    channel_name,
+    rounded_avg_views_per_video,
+    (rounded_avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
+    (rounded_avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
+    ((rounded_avg_views_per_video * @conversionRate * @productCost) - @campaignCost) AS net_profit
+FROM 
+    ChannelData
+
+-- 4. 
+WHERE 
+    channel_name in ('SBM Label', 'Step Records', 'Śpiewające Brzdące - Piosenki dla dzieci', 'tvnpl', 'Bazylland - Tractors & Excavators')
+
+-- 5.  
+ORDER BY
+	     net_profit DESC
+```
+
+### Output
+
+![youtubers_with_the_most_views.png](asset/images/youtubers_with_the_most_views.png)
+
+# Discovery
+
+🏗️ Under Construction:
 
 "I am currently enhancing this project by integrating advanced Power BI techniques, refined Excel configurations, and Python scripts for automated data processing. My focus is on elevating the visual storytelling and ensuring the technical architecture is robust and scalable."
 😀😀😀
